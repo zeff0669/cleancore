@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Proxy Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/proxy --buffer-size 2048 --workers 2219 --ulimit 99999 --http --ssh-only --ssh-port 22 --port 80 --response Proxy
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
